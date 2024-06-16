@@ -1,0 +1,21 @@
+1. Create MCV packaging structure after creating the project using spring initializer
+    a. controller
+    b. service
+    c. repository
+    d. model
+
+2. MySQL's connection:
+    All connection configuration / properties is declared in application.properties file.
+    Before configuring MySQL details in our project, we have to create a Database in MySQL server. (MySQL Workbench)
+    Workbench -> New Schema -> "create database student_management_system"
+
+3. Under entity, create a POJO student class and it's getters, setters and constructors.
+    When creating constructors, do not use ID field as parameter and always create a empty constructor as Hibernate uses proxies to create objects dynamically and it needs a default constructor for that.
+
+4. Create a student interface in Repo layer and extend it with JPARepository. The two parameters will be class type and primary ID type.
+    (We need not add @Repository annotation on top of this interface as JPARepository class has simpleRepo class which has @Repository annotation already. So, we need not add it again)
+    JPARepository also provides @Transactional for all it's methods. So we need not provide that annotation as well.
+
+5. When Spring bean has only one constructor, we need not annotate it with @Autowired.
+
+    
